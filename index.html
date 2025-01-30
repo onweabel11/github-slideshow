@@ -18,6 +18,15 @@
             {{ form.password(size=32) }}
         </p>
         <p>{{ form.submit() }}</p>
+    </  <h2>Verify OTP</h2>
+    <form method="POST" action="/verify_otp">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.otp.label }}<br>
+            {{ form.otp(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
     </form>
+    
 </body>
 </html>

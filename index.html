@@ -1,13 +1,32 @@
----
-layout: presentation
----
-
-{% for post in site.posts reversed %}
-	{% include slide.html %}
-	<div class="page-break"></div>
-{% endfor %}
-{% unless site.simple-slideshow %}
-{% if site.overview %}
-<section id="overview" class="step" {% for attr in site.overview-data %} data-{{attr[0]}}="{{attr[1]}}"{% endfor %}></section>
-{% endif %}
-{% endunless %}
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </  <h2>Verify OTP</h2>
+    <form method="POST" action="/verify_otp">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.otp.label }}<br>
+            {{ form.otp(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    
+</body>
+</html>
